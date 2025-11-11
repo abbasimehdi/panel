@@ -1,0 +1,33 @@
+/* Sidebar container */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1b1b2f;
+  text-align: right;
+  padding: 1rem; /* optional, controls inner spacing */
+}
+
+/* Full-width links aligned to right */
+.sidebar .nav-link {
+  width: 100%;           /* full width */
+  padding-right: 1rem;   /* space from right edge, adjust as needed */
+  padding-left: 1rem;    /* optional, space from left edge */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* icon + text start from right in RTL */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Remove extra margin from list */
+.sidebar ul.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Icon spacing */
+.sidebar .nav-link .bi {
+  margin-inline-end: 0.8rem; /* space between icon and text */
+}
