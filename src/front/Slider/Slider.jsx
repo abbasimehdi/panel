@@ -11,7 +11,7 @@ const Slideshow = () => {
 
           {/* Slide 1 */}
           <div className="carousel-item active">
-            <img src="https://deluxe-tabs.com/design-blog/data/upload/2018/10/make-site-1.jpg" className="d-block w-100" alt="اسلاید ۱" />
+            <img src="https://s.tmimgcdn.com/scr/800x500/107500/e-learning-online-courses-website-template_107581-original.jpg" className="d-block w-100" alt="اسلاید ۱" />
             <div className="carousel-caption d-none d-md-block text-start">
               <h1 className="fw-bold">خوش آمدید به مای اپ</h1>
               <p>ما بهترین راهکارها را برای کسب و کار شما ارائه می‌دهیم.</p>

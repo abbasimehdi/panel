@@ -4,11 +4,12 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"; // custom styles if you have them
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { AuthProvider } from "./front/context/AuthContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div dir="rtl">
+    <AuthProvider>
       <App />
-    </div>
+    </AuthProvider>
   </React.StrictMode>
 );
