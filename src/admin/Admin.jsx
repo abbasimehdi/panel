@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./components/Navbar.jsx";
 import UserDropdown from "./layouts/UserDropdown.jsx";
-import AdminRoutes from "./routes/AdinRoutes.jsx";
+import AdminRoutes from "./routes/AdminRoutes.jsx";
 
 const Admin = () => {
   return (

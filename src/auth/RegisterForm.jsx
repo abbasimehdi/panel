@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import registerBg from '../assets/register.jpg';
 import apiClient from '../api/apiClient';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function RegisterForm() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -66,7 +69,7 @@ function RegisterForm() {
       const data = response.data;
 
       console.log('Registered user:', data);
-      alert('ثبت نام با موفقیت انجام شد!');
+      toast.success('ثبت نام با موفقیت انجام شد!');
       navigate('/login');
     } catch (error) {
       console.error('Error registering:', error);
@@ -75,12 +78,12 @@ function RegisterForm() {
         if (respData.errors) {
           setErrors(respData.errors);
         } else if (respData.message) {
-          alert(respData.message);
+          toast.error(respData.message);
         } else {
-          alert('خطا در ثبت نام. لطفاً دوباره تلاش کنید.');
+          toast.error('خطا در ثبت نام. لطفاً دوباره تلاش کنید.');
         }
       } else {
-        alert('خطا در ثبت نام. لطفاً دوباره تلاش کنید.');
+        toast.error('خطا در ثبت نام. لطفاً دوباره تلاش کنید.');
       }
     }
   };
@@ -99,6 +102,9 @@ function RegisterForm() {
         backgroundPosition: 'center',
       }}
     >
+      {/* Toast container */}
+      <ToastContainer position="top-right" autoClose={5000} />
+
       <div
         className="card shadow-lg p-4"
         style={{ width: '25rem', backgroundColor: 'rgba(255,255,255,0.9)' }}
@@ -106,6 +112,7 @@ function RegisterForm() {
         <h3 className="text-center mb-4">ثبت نام</h3>
 
         <form onSubmit={handleSubmit}>
+          {/* Name */}
           <div className="mb-3">
             <label className="form-label">نام</label>
             <input
@@ -116,9 +123,12 @@ function RegisterForm() {
               className={inputClass('name')}
               placeholder="نام خود را وارد کنید"
             />
-            {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+            {errors.name && (
+              <div className="invalid-feedback">{errors.name}</div>
+            )}
           </div>
 
+          {/* Last Name */}
           <div className="mb-3">
             <label className="form-label">نام خانوادگی</label>
             <input
@@ -129,9 +139,12 @@ function RegisterForm() {
               className={inputClass('last_name')}
               placeholder="نام خانوادگی خود را وارد کنید"
             />
-            {errors.last_name && <div className="invalid-feedback">{errors.last_name}</div>}
+            {errors.last_name && (
+              <div className="invalid-feedback">{errors.last_name}</div>
+            )}
           </div>
 
+          {/* Email */}
           <div className="mb-3">
             <label className="form-label">ایمیل</label>
             <input
@@ -142,9 +155,12 @@ function RegisterForm() {
               className={inputClass('email')}
               placeholder="ایمیل خود را وارد کنید"
             />
-            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+            {errors.email && (
+              <div className="invalid-feedback">{errors.email}</div>
+            )}
           </div>
 
+          {/* Password */}
           <div className="mb-3">
             <label className="form-label">رمز عبور</label>
             <input
@@ -155,9 +171,12 @@ function RegisterForm() {
               className={inputClass('password')}
               placeholder="رمز عبور خود را وارد کنید"
             />
-            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+            {errors.password && (
+              <div className="invalid-feedback">{errors.password}</div>
+            )}
           </div>
 
+          {/* Confirm Password */}
           <div className="mb-3">
             <label className="form-label">تأیید رمز عبور</label>
             <input
@@ -169,10 +188,13 @@ function RegisterForm() {
               placeholder="رمز عبور را دوباره وارد کنید"
             />
             {errors.confirm_password && (
-              <div className="invalid-feedback">{errors.confirm_password}</div>
+              <div className="invalid-feedback">
+                {errors.confirm_password}
+              </div>
             )}
           </div>
 
+          {/* Mobile Number */}
           <div className="mb-3">
             <label className="form-label">شماره موبایل</label>
             <input
@@ -184,7 +206,9 @@ function RegisterForm() {
               placeholder="شماره موبایل خود را وارد کنید"
             />
             {errors.mobile_number && (
-              <div className="invalid-feedback">{errors.mobile_number}</div>
+              <div className="invalid-feedback">
+                {errors.mobile_number}
+              </div>
             )}
           </div>
 
