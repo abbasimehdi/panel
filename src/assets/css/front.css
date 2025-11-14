@@ -1,0 +1,52 @@
+/* ===================== */
+/* Global Styles          */
+/* ===================== */
+
+/* App wrapper: used for all pages */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  direction: rtl; /* global RTL support */
+  background-color: #f8f9fa;
+  font-family: "Vazir", sans-serif;
+}
+
+/* Main content that grows */
+.app-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Text and spacing utilities */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 { margin-top: 1.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* Global button style (can override locally in components) */
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #ff4d4f;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #d9363e;
+}

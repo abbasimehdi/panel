@@ -1,0 +1,88 @@
+/* Profile Component CSS */
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: "Vazir", sans-serif;
+  direction: rtl; /* RTL for all content inside */
+}
+
+.profile-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Profile card styling */
+.profile-card {
+  max-width: 450px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: right; /* make text aligned right */
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Card header */
+.profile-card h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Profile rows with icons */
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Icon placement on the left for RTL */
+.profile-row i {
+  margin-right: 8px;
+  color: #888;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Logout button */
+.profile-card .btn-danger {
+  background-color: #ff4d4f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-card .btn-danger:hover {
+  background-color: #d9363e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .profile-card {
+    padding: 20px 15px;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: flex-end; /* keep RTL alignment */
+  }
+}

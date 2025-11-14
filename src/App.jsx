@@ -5,6 +5,7 @@ import Admin from "./admin/Admin.jsx";
 import Login from './auth/LoginForm.jsx';
 import Register from './auth/RegisterForm.jsx';
 import Profile from "./front/layouts/profile.jsx";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
   return (
