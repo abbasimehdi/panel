@@ -1,17 +1,21 @@
 import React from "react";
-import Auth from "./Auth.jsx"; // import the new Auth component
+import { Link } from "react-router-dom";   // React Router navigation
+import Auth from "./Auth.jsx";
 
 const Menu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary" dir="rtl">
       <div className="container position-relative">
+
         {/* Auth buttons on visual left */}
         <div className="position-absolute start-0">
           <Auth />
         </div>
 
         {/* Centered brand */}
-        <a className="navbar-brand mx-auto fw-bold" href="#">مای اپ</a>
+        <Link className="navbar-brand mx-auto fw-bold" to="/">
+          مای اپ
+        </Link>
 
         {/* Toggler for mobile */}
         <button
@@ -29,12 +33,22 @@ const Menu = () => {
         {/* Main menu */}
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
+
+            {/* HOME */}
             <li className="nav-item">
-              <a className="nav-link active" href="#">خانه</a>
+              <Link className="nav-link active" to="/">
+                خانه
+              </Link>
             </li>
+
+            {/* ABOUT */}
             <li className="nav-item">
-              <a className="nav-link" href="#">درباره ما</a>
+              <Link className="nav-link" to="/about">
+                درباره ما
+              </Link>
             </li>
+
+            {/* SERVICES DROPDOWN */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -47,16 +61,23 @@ const Menu = () => {
                 خدمات
               </a>
               <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
-                <li><a className="dropdown-item" href="#">توسعه وب</a></li>
-                <li><a className="dropdown-item" href="#">توسعه اپلیکیشن</a></li>
-                <li><a className="dropdown-item" href="#">بهینه‌سازی سئو</a></li>
+                <li><Link className="dropdown-item" to="/web-development">توسعه وب</Link></li>
+                <li><Link className="dropdown-item" to="/app-development">توسعه اپلیکیشن</Link></li>
+                <li><Link className="dropdown-item" to="/seo">بهینه‌سازی سئو</Link></li>
+
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#">مشاوره</a></li>
+
+                <li><Link className="dropdown-item" to="/consulting">مشاوره</Link></li>
               </ul>
             </li>
+
+            {/* CONTACT */}
             <li className="nav-item">
-              <a className="nav-link" href="#">تماس با ما</a>
+              <Link className="nav-link" to="/contact">
+                تماس با ما
+              </Link>
             </li>
+
           </ul>
         </div>
       </div>
