@@ -42,7 +42,7 @@ function LoginForm() {
         password: formData.password,
       });
 
-      const token = response.data.token;
+      const token = response.data.data[0].token;
 
       // Save token into AuthContext + localStorage
       login(token);
