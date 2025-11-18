@@ -3,7 +3,14 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="bg-dark text-light vh-100 p-3" style={{ width: "250px" }}>
+    <div
+      className="bg-dark text-light p-3"
+      style={{
+        width: "250px",
+        minHeight: "100vh",   // ensures full viewport height
+        overflowY: "auto",    // scrollable if content grows
+      }}
+    >
       <h3 className="mb-4">پنل مدیریت</h3>
       <ul className="nav flex-column">
         <li className="nav-item mb-2">
