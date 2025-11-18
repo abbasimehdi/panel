@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";   // React Router navigation
-import Auth from "./Auth.jsx";
+import Auth from "./auth/Auth.jsx";
 
 const Menu = () => {
   return (
