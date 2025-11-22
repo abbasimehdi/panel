@@ -12,7 +12,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/admin/categories');
+        const response = await axios.get('http://localhost:8000/api/getCategories');
         setCategories(response.data);
       } catch (err) {
         setError(err.message);

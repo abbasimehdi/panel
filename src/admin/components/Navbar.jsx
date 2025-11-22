@@ -34,6 +34,16 @@ const Sidebar = () => {
             کاربران
           </NavLink>
         </li>
+        <li className="nav-item mb-2">
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link text-light ${isActive ? "fw-bold text-warning" : ""}`
+            }
+            to="/admin/categories"
+          >
+            دسته بندی
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
